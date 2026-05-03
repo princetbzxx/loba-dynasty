@@ -57,3 +57,5 @@ Animations and styling
 GSAP animations used across components
 Fade, slide, and hover animations
 Custom UI styling and responsive layout
+
+Coming soon flip card with particles

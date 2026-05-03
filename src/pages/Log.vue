@@ -3,6 +3,7 @@
 
     <div class="max-w-6xl mx-auto px-4 py-8">
       <Timeline />
+      <ComingSoon />
     </div>
   </div>
   
@@ -10,12 +11,13 @@
 
 <script setup lang="ts">
 import Timeline from '@/components/Timeline.vue'
+import ComingSoon from '@/components/ComingSoon.vue'
 </script>
 
 <style scoped>
 
 .split-horizontal {
-    height: 200px;
+    min-height: 200px;
     background: linear-gradient(to bottom, var(--color-white) 50%, var(--color-primary-light) 50%);
     z-index: -1;
 }

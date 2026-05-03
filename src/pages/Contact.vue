@@ -2,6 +2,7 @@
 import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
 import emailjs from "emailjs-com";
+import ComingSoon from "@/components/ComingSoon.vue";
 
 const name = ref("");
 const email = ref("");
@@ -114,6 +115,7 @@ onMounted(() => {
     </div>
 
   </section>
+
 </template>
 
 <style scoped>

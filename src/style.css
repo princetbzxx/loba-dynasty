@@ -63,9 +63,21 @@
   --color-error: #ef4444;
 }
 
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }
+
+#app {
+  min-height: 100%;
+}
+
 .shimmer {
   position: relative;
   overflow: hidden;
