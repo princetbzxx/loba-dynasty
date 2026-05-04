@@ -4,12 +4,12 @@ import { ref, onMounted } from 'vue'
 const images = [
   '/portfolio9.webp',
   '/portfolio10.webp',
-  '/portfolio13.webp',
-  '/portfolio1.webp',
   '/portfolio8.webp',
+  '/portfolio14.webp',
   '/portfolio2.webp',
-  '/portfolio11.webp',
+  '/portfolio13.webp',
   '/portfolio12.webp',
+  '/portfolio1.webp',
   '/portfolio7.webp',
 ]
 

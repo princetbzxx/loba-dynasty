@@ -30,6 +30,12 @@
   --color-white-8: rgba(255, 255, 255, 0.08);
   --color-success: #22c55e;
   --color-error: #ef4444;
+
+  /* Dots */
+    --dot-color: rgba(0, 0, 0, 0.04); /* black dots */
+  --dot-size: 4px;
+  --dot-bg: #ffffff; /* white background */
+
 }
 .dark {
   /* Brand Colors */
@@ -61,6 +67,9 @@
   --color-white-8: rgba(255, 255, 255, 0.08);
   --color-success: #22c55e;
   --color-error: #ef4444;
+/* Dots */
+  --dot-color: rgba(255, 255, 255, 0.04); /* white dots */
+  --dot-bg: #000000
 }
 
 html,
@@ -72,6 +81,9 @@ body,
 
 body {
   font-family: 'Rubik', sans-serif;
+  background-color: var(--color-primary-dark);
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
 }
 
 #app {

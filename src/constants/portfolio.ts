@@ -102,5 +102,13 @@ export const portfolioItems = [
     tags: ['Football', 'Poster', 'Sports'],
     description: 'A cinematic multi‑pose Mbappé design built around national identity, map textures, and structured card elements. A two‑day project focused on atmosphere, composition, and storytelling.',
     createdAt: '2026-05-02'
+  },
+  {
+    id: 14,
+    title: 'Erling Haaland',
+    src: '/portfolio14.webp',
+    tags: ['Football', 'Poster', 'Sports'],
+    description: "A clean, modern Manchester City poster built around geometric structure and Haaland's toppling presence.",
+    createdAt: '2026-05-04'
   }
 ];
