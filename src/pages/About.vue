@@ -2,6 +2,7 @@
 import { about } from "@/constants/about";
 import { onMounted } from "vue";
 import gsap from "gsap";
+import Banner from "@/components/Banner.vue";
 onMounted(() => {
   // Fade in the whole section
   gsap.from(".about-container", {

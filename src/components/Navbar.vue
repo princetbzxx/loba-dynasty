@@ -13,7 +13,7 @@
       <div class="flex-1 flex justify-end">
     <button
       @click="isOpen = !isOpen"
-      class="w-10 h-10 transition-all duration-300 rotate-45 rounded-md flex items-center justify-center shadow-lg group"
+      class="w-10 h-10 select-none outline-none focus:outline-none transition-all duration-300 rotate-45 rounded-md flex items-center justify-center shadow-lg group"
       :style="{ backgroundColor: 'var(--color-primary-dark)' }"
     >
       <div class="-rotate-45 flex flex-col gap-1 transition-all duration-300">

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <AnnouncementBanner message="Portfolio updated — new animations added" />
+    <AnnouncementBanner message="Latest Arrival: Lamborghini Aventador - Check it out!" />
     <PortfolioPreview />
     
 </div>

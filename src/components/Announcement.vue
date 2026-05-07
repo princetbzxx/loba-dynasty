@@ -2,14 +2,14 @@
 <template>
   <div 
     v-if="visible"
-    class="announcement-banner w-full text-[rgb(var(--color-white))] py-2 px-4 flex items-center justify-between"
+    class="announcement-banner w-full  py-2 px-4 flex items-center justify-between"
   >
     <p class="text-sm font-medium">
       {{ message }}
     </p>
 
     <button 
-      @click="visible = false"
+      @click="dismiss"
       class=" hover:text-white text-xl leading-none"
     >
       ×
@@ -18,8 +18,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
 const visible = ref(true)
+
+const dismiss = () => {
+  visible.value = false
+  localStorage.setItem('announcement-dismissed', 'true')
+}
+
+onMounted(() => {
+  if (localStorage.getItem('announcement-dismissed') === 'true') {
+    visible.value = false
+  }
+})
 
 defineProps<{
     message: string
@@ -34,5 +46,9 @@ defineProps<{
   color: var(--color-black);
   border: none;
   cursor: pointer;
+}
+.announcement-banner p {
+  margin: 0;
+  color: var(--color-black);
 }
 </style>
