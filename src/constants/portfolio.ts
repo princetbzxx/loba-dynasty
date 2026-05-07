@@ -110,5 +110,13 @@ export const portfolioItems = [
     tags: ['Football', 'Poster', 'Sports'],
     description: "A clean, modern Manchester City poster built around geometric structure and Haaland's toppling presence.",
     createdAt: '2026-05-04'
-  }
+  },
+  {
+  id: 15,
+  title: 'Lamborghini Aventador',
+  src: '/portfolio15.webp',
+  tags: ['Automotive', 'Poster', 'Premium'],
+  description: 'A warm, Aventador poster built around realism, atmosphere, and a refined premium layout. Focused on clean geometry, structured text hierarchy, and a cinematic orange world.',
+  createdAt: '2026-05-07'
+}
 ];
