@@ -2,7 +2,7 @@
 <template>
   <div 
     v-if="visible"
-    class="announcement-banner w-full  py-2 px-4 flex items-center justify-between"
+    class="announcement-banner w-full py-2 px-4 flex items-center justify-between"
   >
     <p class="text-sm font-medium">
       {{ message }}
