@@ -91,5 +91,11 @@ export const timelineData: TimelineItem[] = [
     'Published Log Page',
     'Launched the new calendar-based log page to make progress easier to browse and revisit.',
     ['launch', 'journal']
-  )
+  ),
+  entry(
+    '2026-05-09',
+    'Code and Design Progress',
+    'Completed two Frontend Mentor challenges and published the Lamine Yamal design.',
+    ['challenge', 'design']
+  ),
 ]

@@ -118,5 +118,13 @@ export const portfolioItems = [
   tags: ['Automotive', 'Poster', 'Premium'],
   description: 'A warm, Aventador poster built around realism, atmosphere, and a refined premium layout. Focused on clean geometry, structured text hierarchy, and a cinematic orange world.',
   createdAt: '2026-05-07'
+},
+{
+  id: 16,
+  title: 'Lamine Yamal Sensació',
+  src: '/portfolio16.webp',
+  tags: ['Football', 'Poster', 'Sports'],
+  description: 'A vibrant, energetic poster of Lamine Yamal built around a bold colour scheme, dynamic composition, and a sense of youthful energy.',
+  createdAt: '2026-05-10'
 }
 ];

@@ -1,8 +1,7 @@
 <template>
 <div>
-    <AnnouncementBanner message="Latest Arrival: Lamborghini Aventador - Check it out!" />
+    <AnnouncementBanner message="Latest Arrival: Lamine Yamal Sensació - Check it out!" />
     <PortfolioPreview />
-    
 </div>
 </template>
 
