@@ -77,13 +77,18 @@ const id = Number(route.params.id)
 const item = portfolioItems.find((i: any) => i.id === id)
 
 // Related items (exclude current)
-const related = computed(() => { 
-let items = portfolioItems.filter(i => i.id !== id).slice(0, 4) // slice only gets a section of array
-if (!selectedTag.value) return items.slice(0,4)
+const related = computed(() => {
+  let items = portfolioItems.filter(i => i.id !== id)
 
-return items.filter(item =>
-  !selectedTag.value || item.tags?.includes(selectedTag.value)
-)
+  // If no tag selected → just return first 4
+  if (!selectedTag.value) {
+    return items.slice(0, 4)
+  }
+
+  // Filter by tag first, THEN slice
+  return items
+    .filter(item => item.tags?.includes(selectedTag.value!))
+    .slice(0, 4)
 })
 type PortfolioItem = {
   id: number
