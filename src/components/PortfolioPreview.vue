@@ -6,11 +6,11 @@ const images = [
   '/portfolio16.webp',
   '/portfolio17.webp',
   '/portfolio13.webp',
+  '/portfolio14.webp',
+  '/portfolio15.webp',
   '/portfolio2.webp',
   '/portfolio9.webp',
-  '/portfolio15.webp',
   '/portfolio12.webp',
-  '/portfolio14.webp',
 ]
 
 // duplicate the array to create seamless loop (marquee)
