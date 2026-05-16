@@ -33,18 +33,22 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const visible = ref(true)
+// bump this whenever you change the message
+const ANNOUNCEMENT_VERSION = 'v1'
 
-// toggle this to show/hide the Gumroad button on the announcement banner false = no button, true = show button
+const visible = ref(true)
 const showButton = ref(true)
 
 const dismiss = () => {
   visible.value = false
-  localStorage.setItem('announcement-dismissed', 'true')
+  localStorage.setItem('announcement-dismissed-version', ANNOUNCEMENT_VERSION)
 }
 
 onMounted(() => {
-  if (localStorage.getItem('announcement-dismissed') === 'true') {
+  const dismissedVersion = localStorage.getItem('announcement-dismissed-version')
+
+  // hide only if the user dismissed THIS version
+  if (dismissedVersion === ANNOUNCEMENT_VERSION) {
     visible.value = false
   }
 })
@@ -53,6 +57,7 @@ defineProps<{
   message: string
 }>()
 </script>
+
 
 <style scoped>
 .announcement-banner {
