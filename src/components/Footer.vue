@@ -1,6 +1,17 @@
 <template>
   <footer class="footer">
     <p>© 2026 Loba Dynasty.</p>
+    
+        <p>
+      <a 
+        href="https://lobastudios.gumroad.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gumroad-link"
+      >
+        Gumroad
+      </a>
+    </p>
   </footer>
 </template>
 
@@ -12,6 +23,15 @@
   color: var(--color-text-secondary);
   font-size: 0.95rem;
   border-top: 1px solid var(--color-gray-light);
+}
+.gumroad-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gumroad-link:hover {
+  text-decoration: underline;
 }
 </style>
 

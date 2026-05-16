@@ -98,4 +98,10 @@ export const timelineData: TimelineItem[] = [
     'Completed two Frontend Mentor challenges and published the Lamine Yamal design.',
     ['challenge', 'design']
   ),
+  entry(
+    '2026-05-16',
+    'New Gradient Pack Release',
+    'Released a new pack of gradients on Gumroad, featuring over 130 unique gradients.',
+    ['product', 'design']
+  ),
 ]

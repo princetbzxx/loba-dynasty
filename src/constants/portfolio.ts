@@ -126,5 +126,13 @@ export const portfolioItems = [
   tags: ['Football', 'Poster', 'Sports'],
   description: 'A vibrant, energetic poster of Lamine Yamal built around a bold colour scheme, dynamic composition, and a sense of youthful energy.',
   createdAt: '2026-05-10'
+},
+{
+  id: 17,
+  title: 'Jayson Tatum Momentum',
+  src: '/portfolio17.webp',
+  tags: ['Basketball', 'Poster', 'Sports'],
+  description: 'A high‑octane Jayson Tatum poster built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
+  createdAt: '2026-05-16'
 }
 ];
