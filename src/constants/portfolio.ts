@@ -132,7 +132,15 @@ export const portfolioItems = [
   title: 'Jayson Tatum Momentum',
   src: '/portfolio17.webp',
   tags: ['Basketball', 'Poster', 'Sports'],
-  description: 'A high‑octane Jayson Tatum poster built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
+  description: 'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
   createdAt: '2026-05-16'
+},
+{
+id: 18,
+title: 'Desire Doue Allez',
+src: '/portfolio18.webp',
+tags: ['Football', 'Poster', 'Sports'],
+description: 'A timeless Doue poster that will be rememebered for the ages. This design captures the essence of Doue’s rise in talent to another level. Golden energy, Champions League cinema.',
+createdAt: '2026-05-17'
 }
 ];
