@@ -1,5 +1,6 @@
 <template>
   <div class="app-wrapper" style="background-color: var(--color-primary-light)">
+    <Analytics />
 
     <transition name="fade">
       <div v-if="isLoading" key="loader">
@@ -23,6 +24,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { Analytics } from '@vercel/analytics/vue'
 import Navbar from './components/Navbar.vue'
 import Loader from './components/Loader.vue'
 import Footer from './components/Footer.vue'
