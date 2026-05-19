@@ -1,146 +1,174 @@
-export const portfolioItems = [
-  { 
-    id: 1, 
-    title: 'Perfume Promo', 
-    src: '/portfolio1.webp', 
-    tags: ['Promo', 'Product', 'Advertising'],
-    description: 'A sleek promotional visual for a luxury perfume, focused on clean lighting and premium product presentation.',
-    createdAt: '2026-04-22'
-  },
-  { 
-    id: 2, 
-    title: 'Suho WHC 3', 
-    src: '/portfolio2.webp', 
-    tags: ['Drama', 'Poster', 'Editorial'],
-    description: 'A dramatic Weak Hero Class 3 poster featuring Suho, built around mood, tension, and cinematic composition.',
-    createdAt: '2026-04-19'
-  },
-  { 
-    id: 3, 
-    title: 'Cristiano Ronaldo', 
-    src: '/portfolio3.webp', 
-    tags: ['Football', 'Poster', 'Sports'],
-    description: 'A Cristiano Ronaldo sports poster created as part of my 30 Day Design Challenge, aiming to intensify Ronaldo’s bold prescence with dynamic framing.',
-    createdAt: '2026-04-18'
-  },
-  { 
-    id: 4, 
-    title: 'Mattheus Cunha', 
-    src: '/portfolio4.webp', 
-    tags: ['Football', 'Editorial', 'Sports'],
-    description: 'An editorial-style design featuring Matheus Cunha, a product of my experimentation into the red colour-world.',
-    createdAt: '2026-04-16'
-  },
-  { 
-    id: 5, 
-    title: 'PS5 Promo', 
-    src: '/portfolio5.webp', 
-    tags: ['Tech', 'Promo', 'Advertising'],
-    description: 'A PlayStation 5 promotional graphic created during my 30 Day Design Challenge, highlighting futuristic lighting and tech-driven visuals.',
-    createdAt: '2026-04-20'
-  },
-  { 
-    id: 6, 
-    title: 'Dybala', 
-    src: '/portfolio6.webp', 
-    tags: ['Football', 'Poster', 'Sports'],
-    description: 'A vibrant Paulo Dybala design exploring colour, motion, and expressive composition. Part of my 30 Day Design Challenge.',
-    createdAt: '2026-04-12'
-  },
-  { 
-    id: 7, 
-    title: 'Lando Norris', 
-    src: '/portfolio7.webp', 
-    tags: ['F1', 'Editorial', 'Sports'],
-    description: 'A Formula 1 editorial piece featuring Lando Norris, blending speed, energy, and bold graphic elements.',
-    createdAt: '2026-04-07'
-  },
-  { 
-    id: 8, 
-    title: 'Neymar', 
-    src: '/portfolio8.webp', 
-    tags: ['Football', 'Poster', 'Editorial'],
-    description: 'An expressive Neymar Jr poster showcasing Neymar’s dynamic style and vibrant personality, built around cool colours and an emotional composition.',
-    createdAt: '2026-04-24'
-  },
-  { 
-    id: 9, 
-    title: 'Silva', 
-    src: '/portfolio9.webp', 
-    tags: ['Football', 'Portrait', 'Editorial'],
-    description: 'A special graphic of Bernando Silva, focused on clean composition and subtle texture work.',
-    createdAt: '2026-04-25'
-  },
-  {
-    id: 10, 
-    title: 'Max Dowman', 
-    src: '/portfolio10.webp', 
-    tags: ['Football', 'Poster', 'Sports'],
-    description: 'A football poster featuring Max Dowman, built around a sharp mood that highlights the rise of a young star.',
-    createdAt: '2026-04-26'
-  },
-  {
-    id: 11, 
-    title: 'Novak Djokovic', 
-    src: '/portfolio11.webp', 
-    tags: ['Tennis', 'Poster', 'Sports'],
-    description: 'A Novak Djokovic design incorporating elements of Belgrade to create a sense of place and identity.',
-    createdAt: '2026-04-27'
-  },
-  {
-    id: 12, 
-    title: 'Steph Curry', 
-    src: '/portfolio12.webp', 
-    tags: ['Basketball', 'Poster', 'Sports'],
-    description: 'An energetic Steph Curry poster exploring motion and a bold colour direction.',
-    createdAt: '2026-04-28'
-  },
-   {
-    id: 13,
-    title: 'Kylian Mbappé',
-    src: '/portfolio13.webp',
-    tags: ['Football', 'Poster', 'Sports'],
-    description: 'A cinematic multi‑pose Mbappé design built around national identity, map textures, and structured card elements. A two‑day project focused on atmosphere, composition, and storytelling.',
-    createdAt: '2026-05-02'
-  },
-  {
-    id: 14,
-    title: 'Erling Haaland',
-    src: '/portfolio14.webp',
-    tags: ['Football', 'Poster', 'Sports'],
-    description: "A clean, modern Manchester City poster built around geometric structure and Haaland's toppling presence.",
-    createdAt: '2026-05-04'
-  },
-  {
-  id: 15,
-  title: 'Lamborghini Aventador',
-  src: '/portfolio15.webp',
-  tags: ['Automotive', 'Poster', 'Premium'],
-  description: 'A warm, Aventador poster built around realism, atmosphere, and a refined premium layout. Focused on clean geometry, structured text hierarchy, and a cinematic orange world.',
-  createdAt: '2026-05-07'
-},
-{
-  id: 16,
-  title: 'Lamine Yamal Sensació',
-  src: '/portfolio16.webp',
-  tags: ['Football', 'Poster', 'Sports'],
-  description: 'A vibrant, energetic poster of Lamine Yamal built around a bold colour scheme, dynamic composition, and a sense of youthful energy.',
-  createdAt: '2026-05-10'
-},
-{
-  id: 17,
-  title: 'Jayson Tatum Momentum',
-  src: '/portfolio17.webp',
-  tags: ['Basketball', 'Poster', 'Sports'],
-  description: 'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
-  createdAt: '2026-05-16'
-},
-{
-id: 18,
-title: 'Desire Doue Allez',
-src: '/portfolio18.webp',
-tags: ['Football', 'Poster', 'Sports'],
-description: 'A timeless Doue poster that will be rememebered for the ages. This design captures the essence of Doue’s rise in talent to another level. Golden energy, Champions League cinema.',
-createdAt: '2026-05-17'
+export interface PortfolioItem {
+  id: number
+  title: string
+  src: string
+  tags: string[]
+  description: string
+  createdAt: string
 }
-];
+
+function entry(
+  id: number,
+  title: string,
+  src: string,
+  tags: string[],
+  description: string,
+  createdAt: string
+): PortfolioItem {
+  return { id, title, src, tags, description, createdAt }
+}
+
+export const portfolioItems: PortfolioItem[] = [
+  entry(
+    1,
+    'Perfume Promo',
+    '/portfolio1.webp',
+    ['Promo', 'Product', 'Advertising'],
+    'A sleek promotional visual for a luxury perfume, focused on clean lighting and premium product presentation.',
+    '2026-04-22'
+  ),
+  entry(
+    2,
+    'Suho WHC 3',
+    '/portfolio2.webp',
+    ['Drama', 'Poster', 'Editorial'],
+    'A dramatic Weak Hero Class 3 poster featuring Suho, built around mood, tension, and cinematic composition.',
+    '2026-04-19'
+  ),
+  entry(
+    3,
+    'Cristiano Ronaldo',
+    '/portfolio3.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A Cristiano Ronaldo sports poster created as part of my 30 Day Design Challenge, aiming to intensify Ronaldo’s bold prescence with dynamic framing.',
+    '2026-04-18'
+  ),
+  entry(
+    4,
+    'Mattheus Cunha',
+    '/portfolio4.webp',
+    ['Football', 'Editorial', 'Sports'],
+    'An editorial-style design featuring Matheus Cunha, a product of my experimentation into the red colour-world.',
+    '2026-04-16'
+  ),
+  entry(
+    5,
+    'PS5 Promo',
+    '/portfolio5.webp',
+    ['Tech', 'Promo', 'Advertising'],
+    'A PlayStation 5 promotional graphic created during my 30 Day Design Challenge, highlighting futuristic lighting and tech-driven visuals.',
+    '2026-04-20'
+  ),
+  entry(
+    6,
+    'Dybala',
+    '/portfolio6.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A vibrant Paulo Dybala design exploring colour, motion, and expressive composition. Part of my 30 Day Design Challenge.',
+    '2026-04-12'
+  ),
+  entry(
+    7,
+    'Lando Norris',
+    '/portfolio7.webp',
+    ['F1', 'Editorial', 'Sports'],
+    'A Formula 1 editorial piece featuring Lando Norris, blending speed, energy, and bold graphic elements.',
+    '2026-04-07'
+  ),
+  entry(
+    8,
+    'Neymar',
+    '/portfolio8.webp',
+    ['Football', 'Poster', 'Editorial'],
+    'An expressive Neymar Jr poster showcasing Neymar’s dynamic style and vibrant personality, built around cool colours and an emotional composition.',
+    '2026-04-24'
+  ),
+  entry(
+    9,
+    'Silva',
+    '/portfolio9.webp',
+    ['Football', 'Portrait', 'Editorial'],
+    'A special graphic of Bernando Silva, focused on clean composition and subtle texture work.',
+    '2026-04-25'
+  ),
+  entry(
+    10,
+    'Max Dowman',
+    '/portfolio10.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A football poster featuring Max Dowman, built around a sharp mood that highlights the rise of a young star.',
+    '2026-04-26'
+  ),
+  entry(
+    11,
+    'Novak Djokovic',
+    '/portfolio11.webp',
+    ['Tennis', 'Poster', 'Sports'],
+    'A Novak Djokovic design incorporating elements of Belgrade to create a sense of place and identity.',
+    '2026-04-27'
+  ),
+  entry(
+    12,
+    'Steph Curry',
+    '/portfolio12.webp',
+    ['Basketball', 'Poster', 'Sports'],
+    'An energetic Steph Curry poster exploring motion and a bold colour direction.',
+    '2026-04-28'
+  ),
+  entry(
+    13,
+    'Kylian Mbappé',
+    '/portfolio13.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A cinematic multi‑pose Mbappé design built around national identity, map textures, and structured card elements. A two‑day project focused on atmosphere, composition, and storytelling.',
+    '2026-05-02'
+  ),
+  entry(
+    14,
+    'Erling Haaland',
+    '/portfolio14.webp',
+    ['Football', 'Poster', 'Sports'],
+    "A clean, modern Manchester City poster built around geometric structure and Haaland's toppling presence.",
+    '2026-05-04'
+  ),
+  entry(
+    15,
+    'Lamborghini Aventador',
+    '/portfolio15.webp',
+    ['Automotive', 'Poster', 'Premium'],
+    'A warm, Aventador poster built around realism, atmosphere, and a refined premium layout. Focused on clean geometry, structured text hierarchy, and a cinematic orange world.',
+    '2026-05-07'
+  ),
+  entry(
+    16,
+    'Lamine Yamal Sensació',
+    '/portfolio16.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A vibrant, energetic poster of Lamine Yamal built around a bold colour scheme, dynamic composition, and a sense of youthful energy.',
+    '2026-05-10'
+  ),
+  entry(
+    17,
+    'Jayson Tatum Momentum',
+    '/portfolio17.webp',
+    ['Basketball', 'Poster', 'Sports'],
+    'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
+    '2026-05-16'
+  ),
+  entry(
+    18,
+    'Desire Doue Allez',
+    '/portfolio18.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A timeless Doue poster that will be rememebered for the ages. This design captures the essence of Doue’s rise in talent to another level. Golden energy, Champions League cinema.',
+    '2026-05-17'
+  ),
+  entry(
+    19,
+    'Bruno Fernandes',
+    '/portfolio19.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A Bruno Fernandes design built around a moody, cinematic atmosphere and a structured layout. Focused on storytelling, emotion, and a bold colour scheme.',
+    '2026-05-18'
+  )
+]
