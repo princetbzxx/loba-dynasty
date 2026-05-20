@@ -7,7 +7,7 @@ const images = [
   '/portfolio18.webp',
   '/portfolio17.webp',
   '/portfolio13.webp',
-  '/portfolio14.webp',
+  '/portfolio19.png',
   '/portfolio15.webp',
   '/portfolio2.webp',
   '/portfolio12.webp',
