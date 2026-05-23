@@ -72,6 +72,16 @@
       >
         Portfolio
       </RouterLink>
+     <!-- <RouterLink
+        to="/assets"
+        @click="isOpen = false"
+        class="text-2xl transition-colors duration-300 font-medium animate-slide-up"
+        style="color: var(--color-white);"
+        @mouseover="e => e.currentTarget.style.color = 'var(--color-accent-dark-red)'"
+        @mouseleave="e => e.currentTarget.style.color = 'var(--color-white)'"
+      >
+        Assets
+      </RouterLink> -->
          <RouterLink
         to="/contact"
         @click="isOpen = false"

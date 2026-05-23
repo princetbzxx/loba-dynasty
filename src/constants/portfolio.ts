@@ -166,9 +166,17 @@ export const portfolioItems: PortfolioItem[] = [
   entry(
     19,
     'Bruno Fernandes',
-    '/portfolio19.png',
-    ['Football', 'Poster', 'Sports'],
+    '/portfolio19.webp',
+    ['Football', 'Editorial', 'Sports'],
     'A Bruno Fernandes design built around a moody, cinematic atmosphere and a structured layout. Focused on storytelling, emotion, and a bold colour scheme.',
     '2026-05-18'
+  ),
+  entry(
+    20,
+    'Hugo Ekitike',
+    '/portfolio20.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A dynamic Hugo Ekitike poster that glorifies the young striker’s rise to stardom. Built around a bold colour scheme, lively composition, and a sense of sparkling potential.',
+    '2026-05-23'
   )
 ]
