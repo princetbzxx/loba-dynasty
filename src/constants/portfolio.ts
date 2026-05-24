@@ -178,5 +178,13 @@ export const portfolioItems: PortfolioItem[] = [
     ['Football', 'Poster', 'Sports'],
     'A dynamic Hugo Ekitike poster that glorifies the young striker’s rise to stardom. Built around a bold colour scheme, lively composition, and a sense of sparkling potential.',
     '2026-05-23'
-  )
+  ),
+  entry(
+    21,
+    'Antoine Griezmann',
+    '/portfolio21.webp' ,
+    ['Football', 'Poster', 'Sports'],
+    'A vibrant Antoine Griezmann poster built around a bold colour scheme, dynamic composition, and a sense of joyful energy.',
+    '2026-05-24',
+  ),
 ]
