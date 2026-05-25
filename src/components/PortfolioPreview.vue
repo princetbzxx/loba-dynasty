@@ -5,11 +5,11 @@ const images = [
   '/portfolio10.webp',
   '/portfolio16.webp',
   '/portfolio18.webp',
-  '/portfolio17.webp',
+  '/portfolio22.webp',
   '/portfolio20.webp',
   '/portfolio19.webp',
   '/portfolio15.webp',
-  '/portfolio2.webp',
+  '/portfolio17.webp',
   '/portfolio12.webp',
 ]
 

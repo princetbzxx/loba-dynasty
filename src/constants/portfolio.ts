@@ -187,4 +187,13 @@ export const portfolioItems: PortfolioItem[] = [
     'A vibrant Antoine Griezmann poster built around a bold colour scheme, dynamic composition, and a sense of joyful energy.',
     '2026-05-24',
   ),
+  entry(
+    22,
+    'Josh King',
+     '/portfolio22.webp',
+    ['Football', 'Poster', 'Sports'],
+    'An emotive Josh King Poster built with energy, contrast, and identity.',
+    '2026-05-25',
+    
+  )
 ]
