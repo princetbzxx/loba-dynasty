@@ -194,6 +194,13 @@ export const portfolioItems: PortfolioItem[] = [
     ['Football', 'Poster', 'Sports'],
     'An emotive Josh King Poster built with energy, contrast, and identity.',
     '2026-05-25',
-    
-  )
+  ),
+  entry(
+    23,
+    'Samuel Inacio',
+      '/portfolio23.webp',
+    ['Football', 'Poster', 'Sports'],
+    'A vibrant Samuel Inaacio poster built around a bold colour scheme, dynamic composition, and a sense of joyful energy.',
+    '2026-05-28',
+  ),
 ]
