@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 const images = [
+  '/portfolio23.webp',
   '/portfolio10.webp',
   '/portfolio16.webp',
   '/portfolio18.webp',
@@ -10,7 +11,6 @@ const images = [
   '/portfolio19.webp',
   '/portfolio15.webp',
   '/portfolio17.webp',
-  '/portfolio12.webp',
 ]
 
 // duplicate the array to create seamless loop (marquee)

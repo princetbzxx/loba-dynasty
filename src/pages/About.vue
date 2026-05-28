@@ -80,7 +80,7 @@ onMounted(() => {
 
       <!-- RIGHT: Visual -->
       <div class="about-visual">
-        <img src="/portfolio8.webp" alt="About Visual" />
+        <img src="/portfolio22.webp" alt="About Visual" />
       </div>
 
     </div>
