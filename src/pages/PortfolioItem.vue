@@ -7,7 +7,17 @@
       <!-- LEFT SIDE — MAIN POSTER -->
       <div class="left">
         <div class="image-wrapper relative">
-          <img :src="item.src" :alt="item.title" />
+          <img ref="imgRef" :src="activeSrc" :alt="item?.title" />
+          <div v-if="versions.length" class="versions-dots">
+            <button
+              v-for="(v, idx) in versions"
+              :key="v.id"
+              class="dot"
+              :class="{active: idx === activeVersionIndex}"
+              @click="activeVersionIndex = idx"
+              :title="v.label || ('Version ' + (idx + 1))"
+            ></button>
+          </div>
         </div>
           <span v-if="isNew(item)" class="new-badge shimmer">
           NEW
@@ -16,18 +26,22 @@
 
       <!-- RIGHT SIDE — INFO PANEL -->
       <div class="right">
-        <h1 class="title">{{ item.title }}</h1>
-
+        <h1 class="title">{{ item?.title }}</h1>
+        
         <div class="tags">
           <span v-for="tag in item.tags" :key="tag" class="tag cursor-pointer" :class="{active: selectedTag === tag}" @click="selectTag(tag)">{{ tag }}</span>
         </div>
-
+        
         <p class="description">
           {{ item.description || 'A featured piece from my portfolio.' }}
         </p>
+        <div v-if="currentVersionLabel || currentBrand" class="version-badge">
+          <strong v-if="currentVersionLabel">{{ currentVersionLabel }}</strong>
+          <span v-if="currentBrand"> · {{ currentBrand }}</span>
+        </div>
       </div>
-
     </div>
+    
 <hr class="solid"></hr>
     <!-- MORE LIKE THIS -->
     <div class="more-section">
@@ -37,7 +51,7 @@
         <router-link
           v-for="other in related"
           :key="other.id"
-          :to="`/portfolio/${other.id}`"
+          :to="{ name: 'PortfolioItem', params: { id: other.id } }"
           class="more-item"
         >
           <img :src="other.src" :alt="other.title" />
@@ -52,52 +66,60 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { portfolioItems } from '@/constants/portfolio'
-import { ref, computed, onMounted } from 'vue'
+import type { PortfolioItem } from '@/constants/portfolio'
+import { ref, computed, onMounted, watch } from 'vue'
 import { gsap } from 'gsap'
 
 
 const selectedTag = ref<string | null>(null)
+const imgRef = ref<HTMLImageElement | null>(null)
 
 function selectTag(tag: string) {
   selectedTag.value = tag
 }
 
-onMounted(() => {
-  gsap.from(".layout", {
-    opacity: 0,
-    y: 30,
-    duration: 1,
-    ease: "power3.out"
-  })
-})
+
 
 const route = useRoute()
 const id = Number(route.params.id)
 
-const item = portfolioItems.find((i: any) => i.id === id)
+const item = computed<PortfolioItem | undefined>(() =>
+  portfolioItems.find(i => i.id === Number(route.params.id))
+)
+
+// versions = main + any alts
+const activeVersionIndex = ref(0)
+const versions = computed(() => {
+  if (!item.value) return []
+
+  const base = [{
+    id: 'main',
+    label: undefined,
+    src: item.value.src,
+    brand: undefined
+  }]
+
+  return [...base, ...(item.value.alts || [])]
+})
+
+const activeSrc = computed(() => versions.value[activeVersionIndex.value]?.src || item.value?.src)
+const currentVersionLabel = computed(() => versions.value[activeVersionIndex.value]?.label)
+const currentBrand = computed(() => versions.value[activeVersionIndex.value]?.brand)
 
 // Related items (exclude current)
 const related = computed(() => {
   let items = portfolioItems.filter(i => i.id !== id)
-
+  
   // If no tag selected → just return first 4
   if (!selectedTag.value) {
     return items.slice(0, 4)
   }
-
+  
   // Filter by tag first, THEN slice
   return items
-    .filter(item => item.tags?.includes(selectedTag.value!))
+  .filter(item => item.tags?.includes(selectedTag.value!))
     .slice(0, 4)
-})
-type PortfolioItem = {
-  id: number
-  title: string
-  src: string
-  tags: string[]
-  description: string
-  createdAt: string
-}
+  })
 
 const isNew = (item: PortfolioItem) => {
   const created = new Date(item.createdAt)
@@ -108,6 +130,30 @@ const isNew = (item: PortfolioItem) => {
 
   return diffDays <= 7
 }
+onMounted(() => {
+  gsap.from(".layout", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    ease: "power3.out"
+  })
+})
+watch(activeVersionIndex, () => {
+  if (!imgRef.value) return
+  
+ gsap.to(imgRef.value, {
+  opacity: 0,
+  scale: 0.98,
+  duration: 0.15,
+  onComplete: () => {
+    gsap.fromTo(
+      imgRef.value,
+      { opacity: 0, scale: 1.02 },
+      { opacity: 1, scale: 1, duration: 0.4 }
+    )
+  }
+})
+})
 </script>
 
 <style scoped>
@@ -176,6 +222,40 @@ position: relative;
   z-index: 20;
 
   transition: all 0.2s ease;
+}
+
+.versions-dots {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 30;
+}
+
+.dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 3px solid var(--color-black);
+  background: var(--color-white);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.dot.active {
+  transform: scale(1.05);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.version-badge {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-gray-dark);
+  font-weight: 700;
+  display: block;
 }
 
 /* RIGHT SIDE — INFO PANEL */

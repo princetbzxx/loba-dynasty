@@ -1,3 +1,10 @@
+export interface AltVersion {
+  id: string
+  label?: string
+  src: string
+  brand?: string
+}
+
 export interface PortfolioItem {
   id: number
   title: string
@@ -5,6 +12,7 @@ export interface PortfolioItem {
   tags: string[]
   description: string
   createdAt: string
+  alts?: AltVersion[]
 }
 
 function entry(
@@ -13,9 +21,10 @@ function entry(
   src: string,
   tags: string[],
   description: string,
-  createdAt: string
+  createdAt: string,
+  alts?: AltVersion[]
 ): PortfolioItem {
-  return { id, title, src, tags, description, createdAt }
+  return { id, title, src, tags, description, createdAt, alts }
 }
 
 export const portfolioItems: PortfolioItem[] = [
@@ -153,7 +162,8 @@ export const portfolioItems: PortfolioItem[] = [
     '/portfolio17.webp',
     ['Basketball', 'Poster', 'Sports'],
     'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
-    '2026-05-16'
+    '2026-05-16',
+    [{ id: 'a', label: 'Alt - Celtic Edit', src: '/portfolio17-green.webp', brand: '' }],
   ),
   entry(
     18,
@@ -200,7 +210,10 @@ export const portfolioItems: PortfolioItem[] = [
     'Samuel Inacio',
       '/portfolio23.webp',
     ['Football', 'Poster', 'Sports'],
-    'A vibrant Samuel Inaacio poster built around a bold colour scheme, dynamic composition, and a sense of joyful energy.',
+    'A vibrant Samuel Inacio poster built around a bold colour scheme, dynamic composition, and a sense of joyful energy.',
     '2026-05-28',
+    [
+      { id: 'a', label: 'Alt - Sepia Edit', src: '/portfolio23-sepia.webp', brand: '' },
+    ]
   ),
 ]
