@@ -160,7 +160,7 @@ export const portfolioItems: PortfolioItem[] = [
     17,
     'Jayson Tatum Momentum',
     '/portfolio17.webp',
-    ['Basketball', 'Poster', 'Sports'],
+    ['Basketball', 'Collage', 'Sports'],
     'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
     '2026-05-16',
     [{ id: 'a', label: 'Alt - Celtic Edit', src: '/portfolio17-green.webp', brand: '' }],
@@ -216,4 +216,23 @@ export const portfolioItems: PortfolioItem[] = [
       { id: 'a', label: 'Alt - Sepia Edit', src: '/portfolio23-sepia.webp', brand: '' },
     ]
   ),
+  entry(
+    24,
+    'Shai Gilgeous Alexander',
+    '/portfolio24.webp',
+    ['Basketball', 'Graphic', 'Sports'],
+    'A challenging graphic undeniably featuring the one and only SGA.',
+    '2026-06-04',
+  ),
+  entry(
+    25,
+    'Kimi Antonelli - Monaco',
+    '/portfolio25.webp',
+    ['F1','Sports','Heroic'],
+    'A noble graphic commedating Antonelli’s freakish start to F1, and a reminder that the best is yet to come',
+    '2026-06-05',
+    [
+      { id: 'a', label: 'Alt - Nero Edit', src:'/portfolio25-nero.webp'}
+    ]
+  )
 ]

@@ -3,13 +3,13 @@ import { ref, onMounted } from 'vue'
 
 const images = [
   '/portfolio23.webp',
-  '/portfolio10.webp',
+  '/portfolio25.webp',
   '/portfolio16.webp',
   '/portfolio18.webp',
   '/portfolio22.webp',
   '/portfolio20.webp',
   '/portfolio19.webp',
-  '/portfolio15.webp',
+  '/portfolio24.webp',
   '/portfolio17.webp',
 ]
 
