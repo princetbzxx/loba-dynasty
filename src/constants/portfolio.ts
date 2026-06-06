@@ -163,7 +163,9 @@ export const portfolioItems: PortfolioItem[] = [
     ['Basketball', 'Collage', 'Sports'],
     'A high‑octane Jayson Tatum collage built around multi‑pose composition, sharp lighting, and a clean cultured layout. Focused on momentum, emotion, and cinematic visuals.',
     '2026-05-16',
-    [{ id: 'a', label: 'Alt - Celtic Edit', src: '/portfolio17-green.webp', brand: '' }],
+    [
+      { id: 'a', label: 'Alt - Celtic Edit', src: '/portfolio17-green.webp', brand: '' }
+    ],
   ),
   entry(
     18,
