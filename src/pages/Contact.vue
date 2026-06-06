@@ -70,7 +70,7 @@ onMounted(() => {
       <!-- LEFT — IMAGE / VIDEO -->
       <div class="left-media">
         <!-- Replace with your slideshow component or video -->
-        <img src="/portfolio23.webp" alt="Contact Visual" class="media" />
+        <img src="/portfolio20.webp" alt="Contact Visual" class="media" />
       </div>
 
       <!-- RIGHT — CONTACT FORM -->

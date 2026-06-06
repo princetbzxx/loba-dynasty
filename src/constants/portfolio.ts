@@ -223,6 +223,9 @@ export const portfolioItems: PortfolioItem[] = [
     ['Basketball', 'Graphic', 'Sports'],
     'A challenging graphic undeniably featuring the one and only SGA.',
     '2026-06-04',
+    [
+      { id:'a', label:'Alt - Autumn Edit', src:'/portfolio24-autumn.webp'}
+    ]
   ),
   entry(
     25,
