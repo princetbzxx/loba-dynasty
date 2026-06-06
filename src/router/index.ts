@@ -7,7 +7,6 @@ import Assets from '@/pages/Assets.vue'
 import Contact from '@/pages/Contact.vue'
 import Log from '@/pages/Log.vue'
 
-
 const routes = [
   { path: '/', component: Home },
   { path: '/portfolio', component: Portfolio },
@@ -21,4 +20,14 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+// 🔥 Add this block — this is the GA page tracking
+router.afterEach((to) => {
+  if (window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_path: to.fullPath,
+      page_title: document.title,
+    })
+  }
 })
