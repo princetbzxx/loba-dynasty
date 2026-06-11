@@ -198,31 +198,6 @@ position: relative;
   display: block;
   object-fit: cover;
 }
-.new-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-
-  transform: rotate(-12deg) scale(1.05);
-
-
-  background: linear-gradient(135deg, var(--color-white), var(--color-accent-neon), var(--color-accent-neon));
-  color: var(--color-black);
-
-  border: 3px solid var(--color-black);
-  border-radius: 6px;
-
-  box-shadow: 4px 4px 0px black;
-
-  z-index: 20;
-
-  transition: all 0.2s ease;
-}
 
 .versions-dots {
   position: absolute;

@@ -2,7 +2,7 @@
   <section class="portfolio-page">
     <transition-group name="fade" tag="div" class="bento-grid">
       <router-link
-        v-for="item in items"
+        v-for="item in paginatedItems"
         :key="item.id"
         :to="`/portfolio/${item.id}`"
         class="bento-item-link"
@@ -25,36 +25,62 @@
         </article>
       </router-link>
     </transition-group>
+  <div class="pagination py-20">
+  <button class="page-btn shimmer" @click="prevPage" :disabled="currentPage === 1">
+    ← Prev
+  </button>
+
+  <span class="page-indicator">
+    {{ currentPage }} / {{ totalPages }}
+  </span>
+
+  <button class="page-btn shimmer" @click="nextPage" :disabled="currentPage === totalPages">
+    Next →
+  </button>
+</div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { ref, computed, watch, nextTick, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { portfolioItems } from '@/constants/portfolio'
 
+/* -----------------------------
+   SORTED ITEMS (newest first)
+------------------------------ */
 const items = computed(() =>
   [...portfolioItems].sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   )
 )
-onMounted(() => {
-  gsap.from(".bento-item", {
-    opacity: 0,
-    y: 30,
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.15
-  });
 
-  gsap.to(".bento-item", {
-    y: -0.2,
-    duration: 20,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  });
+/* -----------------------------
+   PAGINATION
+------------------------------ */
+const currentPage = ref(1)
+const itemsPerPage = 9 // 3 columns × 3 rows
+
+const totalPages = computed(() =>
+  Math.ceil(items.value.length / itemsPerPage)
+)
+
+const paginatedItems = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  return items.value.slice(start, start + itemsPerPage)
 })
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) currentPage.value++
+}
+
+const prevPage = () => {
+  if (currentPage.value > 1) currentPage.value--
+}
+
+/* -----------------------------
+   "NEW" BADGE LOGIC
+------------------------------ */
 type PortfolioItem = {
   id: number
   title: string
@@ -67,13 +93,58 @@ type PortfolioItem = {
 const isNew = (item: PortfolioItem) => {
   const created = new Date(item.createdAt)
   const now = new Date()
-
-  const diffDays =
-    (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)
-
+  const diffDays = (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)
   return diffDays <= 7
 }
+
+/* -----------------------------
+   GSAP ANIMATIONS
+------------------------------ */
+
+// ENTRY ANIMATION (runs on mount + page change)
+const animateEntry = () => {
+  gsap.from(".bento-item", {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power3.out",
+    stagger: 0.12
+  })
+}
+
+// FLOATING ANIMATION (runs ONCE)
+const animateFloat = () => {
+  gsap.to(".bento-item", {
+    y: -0.2,
+    duration: 20,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  })
+}
+
+onMounted(() => {
+  animateEntry()
+  animateFloat() // only once
+})
+
+/* -----------------------------
+   FIX: SCROLL TO TOP ON PAGE CHANGE
+------------------------------ */
+watch(currentPage, async () => {
+  await nextTick()
+
+  // Smooth scroll to top so it doesn't "teleport"
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+
+  // Re-run entry animation ONLY
+  animateEntry()
+})
 </script>
+
 
 <style scoped>
 /* PAGE */
@@ -81,7 +152,10 @@ const isNew = (item: PortfolioItem) => {
   min-height: 100vh;
   padding: 3rem 2rem;
   color: var(--color-white);
-  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+
+  background:
+    radial-gradient(circle at top, rgba(var(--color-accent-neon), 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-overlay) 100%);
 }
 
 /* DESKTOP — REAL BENTO GRID */
@@ -172,31 +246,55 @@ const isNew = (item: PortfolioItem) => {
   transform: translateY(20px);
   transition: 0.35s ease;
 }
-.new-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-
-  transform: rotate(-12deg) scale(1.05);
-
-
-  background: linear-gradient(135deg, var(--color-white), var(--color-accent-neon), var(--color-accent-neon));
-  color: var(--color-black);
-
-  border: 3px solid var(--color-black);
-  border-radius: 6px;
-
-  box-shadow: 4px 4px 0px black;
-
-  z-index: 20;
-
-  transition: all 0.2s ease;
+.pagination {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
 }
+
+.page-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  background: rgba(var(--color-white-rgb), 0.08);
+  border: 1px solid rgba(var(--color-white-rgb), 0.18);
+  backdrop-filter: blur(6px);
+
+  color: var(--color-black); /* ← FIXED */
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: rgba(var(--color-white-rgb), 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--color-black-rgb), 0.25);
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-black); /* ← FIXED */
+
+  padding: 0.4rem 0.8rem;
+
+  background: rgba(var(--color-white-rgb), 0.05);
+  border-radius: 0.6rem;
+  border: 1px solid rgba(var(--color-white-rgb), 0.12);
+  backdrop-filter: blur(4px);
+}
+
+
 
 .bento-item:hover .item-label {
   opacity: 1;
