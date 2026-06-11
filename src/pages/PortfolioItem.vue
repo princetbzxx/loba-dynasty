@@ -81,10 +81,10 @@ function selectTag(tag: string) {
 
 
 const route = useRoute()
-const id = Number(route.params.id)
+const id = computed(() => Number(route.params.id))
 
 const item = computed<PortfolioItem | undefined>(() =>
-  portfolioItems.find(i => i.id === Number(route.params.id))
+  portfolioItems.find(i => i.id === id.value)
 )
 
 // versions = main + any alts
@@ -108,7 +108,7 @@ const currentBrand = computed(() => versions.value[activeVersionIndex.value]?.br
 
 // Related items (exclude current)
 const related = computed(() => {
-  let items = portfolioItems.filter(i => i.id !== id)
+  let items = portfolioItems.filter(i => i.id !== id.value)
   
   // If no tag selected → just return first 4
   if (!selectedTag.value) {
@@ -120,6 +120,10 @@ const related = computed(() => {
   .filter(item => item.tags?.includes(selectedTag.value!))
     .slice(0, 4)
   })
+
+watch(item, () => {
+  activeVersionIndex.value = 0
+})
 
 const isNew = (item: PortfolioItem) => {
   const created = new Date(item.createdAt)
@@ -256,6 +260,7 @@ position: relative;
   padding: 0.35rem 0.75rem;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 0.85rem;
   font-weight: 600;
     letter-spacing: 0.2em;

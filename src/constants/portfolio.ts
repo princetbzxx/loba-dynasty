@@ -238,6 +238,17 @@ export const portfolioItems: PortfolioItem[] = [
     '2026-06-05',
     [
       { id: 'a', label: 'Alt - Nero Edit', src:'/portfolio25-nero.webp'}
-    ]
-  )
+    ]  ),
+  entry(
+    26,
+    'Real Betis Rebrand',
+    '/betis.webp',
+    ['Football', 'Rebrand', 'Editorial'],
+    'A multipage Real Betis rebrand case study, showing the matchday landmark, goal moment, full-time wrap-up, and lineup presentation.',
+    '2026-06-10',
+    [
+      { id: 'a', label: 'Full Time', src: '/betisfulltime.webp', brand: 'Real Betis' },
+      { id: 'b', label: 'Goal', src: '/betisgoal.webp', brand: 'Real Betis' },
+      { id: 'c', label: 'Lineup', src: '/betislineup.webp', brand: 'Real Betis' }
+    ]  )
 ]
