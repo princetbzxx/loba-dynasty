@@ -244,7 +244,7 @@ export const portfolioItems: PortfolioItem[] = [
     'Real Betis Rebrand',
     '/betis.webp',
     ['Football', 'Rebrand', 'Editorial'],
-    'A multipage Real Betis rebrand case study, showing the matchday landmark, goal moment, full-time wrap-up, and lineup presentation.',
+    'A multipage Real Betis rebrand case study, showing the goal moment, full-time wrap-up, and lineup presentation.',
     '2026-06-10',
     [
       { id: 'a', label: 'Full Time', src: '/betisfulltime.webp', brand: 'Real Betis' },
