@@ -152,7 +152,7 @@ watch(activeVersionIndex, () => {
   onComplete: () => {
     gsap.fromTo(
       imgRef.value,
-      { opacity: 0, scale: 1.02 },
+      { opacity: 0.4, scale: 1.02 },
       { opacity: 1, scale: 1, duration: 0.4 }
     )
   }

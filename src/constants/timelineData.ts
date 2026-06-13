@@ -125,5 +125,11 @@ export const timelineData: TimelineItem[] = [
     'New Equipment',
     'Tested a new sound card for piano recording and audio work.',
     ['music', 'productivity']
-  )
+  ),
+  entry(
+    '2026-06-13',
+    'Neymar Jr - Undeniable',
+    'Created two posters, exploring rim lighting and effects',
+    ['graphic', 'design']
+  ),
 ]

@@ -250,5 +250,15 @@ export const portfolioItems: PortfolioItem[] = [
       { id: 'a', label: 'Full Time', src: '/betisfulltime.webp', brand: 'Real Betis' },
       { id: 'b', label: 'Goal', src: '/betisgoal.webp', brand: 'Real Betis' },
       { id: 'c', label: 'Lineup', src: '/betislineup.webp', brand: 'Real Betis' }
-    ]  )
+    ]  ),
+    entry(
+  27,
+  'Neymar Jr — Undeniable',
+  '/portfolio-27.webp',
+  ['Football', 'Heroic', 'Poster'],
+  'A Brazil-themed Neymar Jr poster showcasing Neymar’s levels, pure tension and cinematic storytelling through bold colour, lighting, and composition.',
+  '2026-06-13',
+)
+
 ]
+
