@@ -14,7 +14,7 @@ export const slides = [
     version: "1.2.0",
     title: "Better Project Browsing",
     description: "Projects are now easier to explore.",
-    image: "/portfolio28.webp",
+    image: "/portfolio-grid.png",
     features: [
       "Cleaner navigation",
       "Better cards",
