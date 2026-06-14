@@ -254,7 +254,7 @@ export const portfolioItems: PortfolioItem[] = [
     entry(
   27,
   'Neymar Jr — Undeniable',
-  '/portfolio-27.webp',
+  '/portfolio27.webp',
   ['Football', 'Heroic', 'Poster'],
   'A Brazil-themed Neymar Jr poster showcasing Neymar’s levels, pure tension and cinematic storytelling through bold colour, lighting, and composition.',
   '2026-06-13',
