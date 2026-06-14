@@ -7,9 +7,11 @@
       </div>
 
       <div v-else key="site" class="site-wrapper">
+
+        <ReleaseNotesModal />
+
         <Navbar />
 
-        <!-- This grows and pushes footer down -->
         <div class="content-wrapper">
           <RouterView />
         </div>
@@ -23,6 +25,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import ReleaseNotesModal from './components/ReleaseNotesModal.vue'
 import Navbar from './components/Navbar.vue'
 import Loader from './components/Loader.vue'
 import Footer from './components/Footer.vue'

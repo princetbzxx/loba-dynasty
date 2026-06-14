@@ -9,9 +9,7 @@
       >
         <article :class="['bento-item']">
          <div class="item-inner">
-          <span v-if="isNew(item)" class="new-badge shimmer small" :style="{
-    transform: `rotate(${Math.random() * 10 - 15}deg)`
-  }">
+          <span v-if="isNew(item)" class="new-badge shimmer small" :style="{ transform: `rotate(${badgeRotation(item.id)})` }">
             NEW
           </span>
 
@@ -47,7 +45,7 @@ import { gsap } from 'gsap'
 import { portfolioItems } from '@/constants/portfolio'
 
 /* -----------------------------
-   SORTED ITEMS (newest first)
+   SORTED ITEMS
 ------------------------------ */
 const items = computed(() =>
   [...portfolioItems].sort(
@@ -59,7 +57,7 @@ const items = computed(() =>
    PAGINATION
 ------------------------------ */
 const currentPage = ref(1)
-const itemsPerPage = 9 // 3 columns × 3 rows
+const itemsPerPage = 9
 
 const totalPages = computed(() =>
   Math.ceil(items.value.length / itemsPerPage)
@@ -79,44 +77,43 @@ const prevPage = () => {
 }
 
 /* -----------------------------
-   "NEW" BADGE LOGIC
+   NEW BADGE (clean + stable)
 ------------------------------ */
-type PortfolioItem = {
-  id: number
-  title: string
-  src: string
-  tags: string[]
-  description: string
-  createdAt: string
-}
-
-const isNew = (item: PortfolioItem) => {
+const isNew = (item: any) => {
   const created = new Date(item.createdAt)
   const now = new Date()
-  const diffDays = (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)
+  const diffDays = (now.getTime() - created.getTime()) / 86400000
   return diffDays <= 7
 }
 
 /* -----------------------------
-   GSAP ANIMATIONS
+   FIXED BADGE ROTATION (NO RANDOM IN TEMPLATE)
 ------------------------------ */
-
-// ENTRY ANIMATION (runs on mount + page change)
-const animateEntry = () => {
-  gsap.from(".bento-item", {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    ease: "power3.out",
-    stagger: 0.12
-  })
+const badgeRotation = (id: number) => {
+  return `${(id % 2 === 0 ? -10 : 8)}deg`
 }
 
-// FLOATING ANIMATION (runs ONCE)
+/* -----------------------------
+   GSAP (scoped safer)
+------------------------------ */
+const animateEntry = () => {
+  gsap.fromTo(
+    ".bento-item",
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger: 0.08
+    }
+  )
+}
+
 const animateFloat = () => {
   gsap.to(".bento-item", {
-    y: -0.2,
-    duration: 20,
+    y: -2,
+    duration: 6,
     repeat: -1,
     yoyo: true,
     ease: "sine.inOut"
@@ -125,22 +122,15 @@ const animateFloat = () => {
 
 onMounted(() => {
   animateEntry()
-  animateFloat() // only once
+  animateFloat()
 })
 
 /* -----------------------------
-   FIX: SCROLL TO TOP ON PAGE CHANGE
+   PAGE CHANGE
 ------------------------------ */
 watch(currentPage, async () => {
   await nextTick()
-
-  // Smooth scroll to top so it doesn't "teleport"
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
-
-  // Re-run entry animation ONLY
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   animateEntry()
 })
 </script>
