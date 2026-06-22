@@ -100,7 +100,7 @@
 import { ref } from "vue";
 import { slides } from '@/constants/releaseNotes'
 
-const VERSION = "1.2.0";
+const VERSION = "1.2.1";
 
 const isOpen = ref(
   localStorage.getItem("release-notes") !== VERSION

@@ -187,7 +187,7 @@ position: relative;
 
 /* LEFT SIDE */
 .left {
-  flex: 2;
+  flex: 1.4;
 }
 
 .image-wrapper {

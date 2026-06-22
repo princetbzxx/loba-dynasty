@@ -11,6 +11,14 @@
       >
         Gumroad
       </a>
+       <a 
+        href="https://linktr.ee/tobioladunjoye"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gumroad-link"
+      >
+        Linktree
+      </a>
     </p>
   </footer>
 </template>

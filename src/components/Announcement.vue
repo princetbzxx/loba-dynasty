@@ -11,12 +11,12 @@
       <!-- Toggleable button -->
       <a 
         v-if="showButton"
-        href="https://lobastudios.gumroad.com/"
+        href="https://linktr.ee/tobioladunjoye"
         target="_blank"
         rel="noopener noreferrer"
         class="banner-a"
       >
-        Gumroad
+        Linktree
       </a>
 
       <!-- Dismiss button -->
@@ -34,7 +34,7 @@
 import { ref, onMounted } from 'vue'
 
 // bump this whenever you change the message
-const ANNOUNCEMENT_VERSION = 'v1'
+const ANNOUNCEMENT_VERSION = 'v1.1'
 
 const visible = ref(true)
 const showButton = ref(true)

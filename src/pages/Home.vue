@@ -1,6 +1,6 @@
 <template>
 <div>
-    <AnnouncementBanner message="New Gradient Pack on Gumroad! - Check it out" />
+    <AnnouncementBanner message="See more of my work →" />
     <PortfolioPreview />
 </div>
 </template>

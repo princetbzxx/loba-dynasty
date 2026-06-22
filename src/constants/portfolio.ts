@@ -258,7 +258,24 @@ export const portfolioItems: PortfolioItem[] = [
   ['Football', 'Heroic', 'Poster'],
   'A Brazil-themed Neymar Jr poster showcasing Neymar’s levels, pure tension and cinematic storytelling through bold colour, lighting, and composition.',
   '2026-06-13',
-)
+),
+entry(
+  28,
+  'Arsenal Social Media Rebrand',
+  '/arsenal-rebrand.webp',
+  ['Football','Media','Hype'],
+  'A professional Arsenal rebrand case study, bringing structured layout, cinematic moments and effortless magic into clean visuals',
+  '2026-06-21',
+[
+  {id: 'a', label: 'Goal', src: '/arsenal-goal.webp', brand: 'Arsenal'},
+  {id: 'b', label: 'Starting 11', src: '/arsenal-starting-xi.webp', brand: 'Arsenal'},
+  {id: 'c', label: 'Full Time', src: '/arsenal-scoreboard.webp', brand: 'Arsenal'},
+  {id: 'd', label: 'Man of the Match', src: '/arsenal-m.o.m.webp', brand: 'Arsenal'},
+]
+
+  
+
+),
 
 ]
 
