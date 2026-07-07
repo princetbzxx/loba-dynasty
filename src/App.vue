@@ -17,6 +17,7 @@
         </div>
 
         <Footer />
+        <Analytics />
       </div>
     </transition>
 
@@ -29,6 +30,7 @@ import ReleaseNotesModal from './components/ReleaseNotesModal.vue'
 import Navbar from './components/Navbar.vue'
 import Loader from './components/Loader.vue'
 import Footer from './components/Footer.vue'
+import { Analytics } from '@vercel/analytics/vue'
 const isLoading = ref(true)
 const isDark = ref(false)
 
